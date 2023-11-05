@@ -1,0 +1,265 @@
+---
+title: "**Controle Estatístico da Qualidade no R: um Guia Prático**"
+author:
+- name: Mário Diego Valente
+- name: Carlos Paixão
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  html_document: 
+    code_download: yes
+    highlight: textmate
+    number_sections: yes
+    theme: cerulean
+    toc: yes
+    toc_depth: 6
+    toc_float:
+      collapsed: yes
+      smooth_scroll: yes
+    keep_md: yes
+  pdf_document:
+    toc: yes
+    toc_depth: '6'
+institute:
+abstract: "."
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+
+```{=html}
+<style>
+body{text-align: justify}
+</style>
+```
+
+
+::: progress
+::: {.progress-bar style="width: 100%;"}
+:::
+:::
+
+
+# **Controle Estatístico da Qualidade**
+## **Introdução**
+
+
+Os mÉtodos estatÍsticos cada vez mais vÊm sendo reconhecidos como um importante
+instrumento para diagnosticar e otimizar a gestÃO e operaÇÃO de diversos sistemas, desde os sistemas humanos aos mais complexos sistemas fÍsicos. As aplicações destes vêm desempenhando um papel importante na solução de muitos problemas, da industria `a agricultura, passando pelos setores socio-economico, administrativo e de saúde. Grande parte das mais avancadas pesquisas cientıficas em diversas areas do conhecimento dependem cada vez mais dos metodos estatısticos (RAMOS, 2003).
+
+
+A era do Controle Estatístico da Qualidade surgiu no contexto da Segunda Guerra Mundial com a ascensão da revolução industrial e da produção massificada, que tornou impraticável inspecionar os milhares de produtos que saiam da linha de produção. Assim, com o controle estatístico, seria possível selecionar certa quantidade para inspeção, onde as propriedades dessa amostra seriam estendidas a todo o lote.
+
+O pioneiro da aplicação da estatística ao controle de qualidade foi **WalteR Andrew Shewhart** em 1924, que preparou o primeiro rascunho do que viria a ser conhecido como carta de controle.
+
+Concomitantemente, dois colegas de Shewhart, **Harold F. Dodge** e **Harry G. Romig**,  desenvolveram técnicas de amostragem constituindo o núcleo da maioria das técnicas estatísticas de controle da qualidade que são usadas até hoje. No início o processo foi lento, porém se ampliou com o advento da Segunda Guerra mundial com a influência das forças armadas americanas.
+
+
+
+
+::: progress
+::: {.progress-bar style="width: 100%;"}
+:::
+:::
+
+## **Sete Ferramentas da Qualidade**
+
+As sete ferramentas estatísticas de qualidade surgiu no Japão, logo após o final da Segunda Guerra Mundial. As empresas precisavam capacitar mão de obra para o controle da qualidade, mas não era possível ensinar estatística para todos os trabalhadores. Concentraram, então, esforços no treinamento de pessoas para desenhar gráficos que, embora simples, resolvessem a maior parte dos problemas. E isso se comprovou verdadeiro.
+
+Desde então, o uso das ferramentas tem sido de grande valia para os sistemas de gestão, sendo um conjunto de ferramentas estatísticas de uso consagrado para melhoria de produtos, serviços e processos.
+
+Tradicionalmente são 7 as ferramentas da qualidade:
+
+
+-   1) Fluxograma (ou Estratificacao)
+-   2) Diagrama de Ishikawa
+-   3) Folhas de Verificacao (check sheet)
+-   4) Diagrama de Pareto
+-   5) Histograma
+-   6) Diagrama de Dispersao
+-   7) Grdficos de Controle
+
+
+::: progress
+::: {.progress-bar style="width: 100%;"}
+:::
+:::
+
+
+
+## **Diagra de Ishikawa**
+
+O diagrama de **Ishikawa**, também conhecido como diagrama de **Causa e Efeito**, ou **Diagrama “Espinha de Peixe”** é usado para identificar as causas de um “problema”. É utilizado para apresentar a relação existente entre um resultado de um processo (efeito) e os fatores (causas) do processo que, por razões técnicas, possam afetar o resultado considerado.
+
+O diagrama foi proposto originalmente pelo engenheiro químico, **Kaoru Ishikawa** em 1934 e aperfeiçoado nos anos seguintes.
+
+
+Kaoru nasceu em Tóquio em 13 de julho de 1915, filho mais velho de oito filhos, graduou-se em Química na Universidade de Tóquio em 1939. 
+
+De 1939 a 1941 trabalhou no exército como técnico naval, então foi trabalhar na “**Nissan Liquid Fuel Company**” até 1947.
+
+
+
+
+::: progress
+::: {.progress-bar style="width: 100%;"}
+:::
+:::
+
+
+
+## **Folhas de Verificação**
+### **Para Que Serve**
+
+-   1) Tabela para coletar e resumir informacoes
+-   2) Contagem de ocorrencia de eventos: ocorrencias, consultas, falhas,defeitos, nao-conformidades, etc
+-   3) Facil utilizacao, visualizacao e interpretacao
+-   4) Coleta de dados de forma padronizada
+-   5) E um Registro da Qualidade, portanto deve ser devidamente identificada, datada, e assinada por responsável
+
+
+### **Passos Para Aplicação**
+
+-   1) Escolher um tipo de folha de verificacao que permite um facil preenchimento, organizar conforme a necessidade da organização ou setor, no qual será feita a coleta de dados.
+-   2) Definir a quantidade de informacoes ira conter no problema/falhas ou ocorrencia e o tamanho da amostra dos dados
+-   3) Decidir o local ou setor onde será a coleta de dados
+-   4) Determinar a frequência com que serão coletados os dados, pode ser diário, semanal ou mensal. Serve para verificar a ocorrência durante um determinado período
+-   5) Definir quem deverá coletar os dados, poderá ser o gestor do setor que está sendo coletado os dados ou supervisor direto do setor operacional;
+-   6) Aplicar a folha de verificacao atingir a coleta dentro do planejado.
+
+
+::: progress
+::: {.progress-bar style="width: 100%;"}
+:::
+:::
+
+
+## **Diagrama de Pareto**
+
+O diagrama de Pareto é um gráfico de colunas que ordena as frequências das ocorrências, da maior para a menor, permitindo a priorização dos problemas, procurando levar a cabo o princípio de Pareto (80\% das consequências advêm de 20\% das causas), isto é, há muitos problemas sem importância diante de outros mais graves.
+
+
+Um dos pioneiros em trabalhos na área de Qualidade, **Joseph Juran**, encontrou um padrão semelhante ao encontrado por Pareto na distribuição dos tipos de defeitos de certo produto. Após diversas análises, ele chegou a conclusão de que em grande parte das iniciativas de melhoria, poucos tipos de defeitos eram responsáveis pela maioria das rejeições (poucos vitais), ou seja, 80% dos problemas de qualidade de uma peça são causados por 20% dos tipos de defeitos. 
+
+Da relação entre esses dois trabalho foi criado o conceito de Pareto. Joseph Juran cunhou o termo **“Gráfico de Pareto”** no início da década de 90.
+
+
+
+::: progress
+::: {.progress-bar style="width: 100%;"}
+:::
+:::
+
+
+
+
+## **Graficos de Controle**
+
+-   1) Grafico de Controle da Media
+-   2) Grafico de Controle da Amplitude
+-   3) Grafico de Controle da Desvio-Padrao
+-   4) Grafico de Controle da Media Movel
+-   5) Grafico de Controle da Cussum
+-   6) Grafico de Controle da Ewma
+
+
+
+
+
+::: progress
+::: {.progress-bar style="width: 100%;"}
+:::
+:::
+
+
+
+## **Carregar Pacotes**
+
+
+```{r message=FALSE, warning=FALSE}
+library(dplyr)
+library(ggplot2)
+library(qcc)
+library(SixSigma)
+#library(qualityTools)
+#library(fdth)
+library(IQCC)
+library(MSQC)
+library(spc)
+```
+
+
+
+::: progress
+::: {.progress-bar style="width: 100%;"}
+:::
+:::
+
+
+## **Usando o pacote qcc (Quality control chart)**
+### **Argumentos do Pacote**
+
+-   1) **cause** : uma lista de causas e ramos fornecendo rótulos descritivos. 
+-   2) **effect** : um rótulo de string ou o efeito.
+-   3) **title** : uma string especificando o titulo principal para aparecer no diagrama
+-   4) **cex** : um vetor de valores para a expansão gráfica do personagem. Os valores referem-se, pela ordem, aos RAMOS, CAUSA e EFEITOS.
+-  5) **font** : um vetor de valores para a fonte, os valores referem-se, pela ordem, aos ramos, causas e efeitos.
+
+
+### **Diagrama de Ishikawa Tradicional**
+
+```{r}
+cause.and.effect(cause = list(Medida   = c("Afericao","Acompanhamento","Indicador"),
+                              Material = c("Qualidade","Padronizacao","Entrega"),
+                              Pessoas  = c("Comunicacao","Disciplina","Criatividade"),
+                              Ambiente = c("Calor","Frio","Espaco"),
+                              Metodo   = c("Procedimentos","Etapas","Manuais"),
+                              Maquina  = c("Equipamentos","Ferramentas","Instrumentos")),
+                 effect = c("Reducao/Aumento/Defeitos"),
+                 title  = "Diagrama de Causa e Efeito", 
+                 cex    = c(1,1,1), 
+                 font  = c(2,2,2)) 
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+# **Referências Bibliográficas**
+
+
+-   1) Mason, R.L. and Young, J.C. (2002) Multivariate Statistical Process Control with Industrial Applications, SIAM. 
+
+-   2) Montgomery, D.C. (2005) Introduction to Statistical Quality Control, 5th ed. New York: John Wiley \& Sons. 
+
+-   3) Ryan, T. P. (2000), Statistical Methods for Quality Improvement, 2nd ed. New York: John Wiley \& Sons, Inc. 
+
+-   4) Scrucca, L. (2004). qcc: an R package for quality control charting and statistical process control. R News 4/1, 11-17. 
+
+-  5) Wetherill, G.B. and Brown, D.W. (1991) Statistical Process Control. New York: Chapman \& Hall.
+
+-  6) Allen, T. T. (2010) Introduction to Engineering Statistics and Lean Six Sigma - Statistical Quality Control and Design of Experiments and Systems (Second Edition ed.). London: Springer.
+
+-  7) Box, G. (1991). Teaching engineers experimental design with a paper helicopter. Report 76, Center for Quality and Productivity Improvement. University of Wisconsin.
+
+-  8) Cano, Emilio L., Moguerza, Javier M. and Redchuk, Andrés. 2012. Six Sigma with R. Statistical Engineering for Process Improvement, Use R!, vol. 36. Springer, New York. http://www.springer.com/statistics/book/978-1-4614-3651-5.
+
+-  9) Cano, Emilio L., Moguerza, Javier M. and Prieto Corcoba, Andrés. 2015. Quality Control with R. An ISO Standards approach, Use R!, Springer, New York.
+
+
+::: progress
+::: {.progress-bar style="width: 100%;"}
+:::
+:::
